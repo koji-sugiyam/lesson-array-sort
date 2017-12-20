@@ -34,7 +34,8 @@ public class Sort {
     private void doSort(int[] result) {
         // write the awesome code
     
-
+    	//回答
+    	/*
     	int num;
     	int count = result.length;
     	
@@ -55,10 +56,44 @@ public class Sort {
             	}	
     	    }
     	}
-
-    		
-    		
-
+    	*/
     	
+    	//答え
+    	quicksort(result, 0, result.length - 1);
+    	
+    }
+    
+    //答え
+    private void quicksort(int[] result, int left, int right) {
+    	
+        int left_ = left;
+        int right_ = right;
+        int num = result[left_ + ((right_ - left_) / 2)];
+
+        while (left_ <= right_) {
+            while (result[left_] < num) {
+                left_++;
+            }
+            while (result[right_] > num) {
+                right_--;
+            }
+            if (left_ <= right_) {
+                swap(result, left_, right_);
+                left_++;
+                right_--;
+            }
+        }
+        if (left < right_) {
+            quicksort(result, left, right_);
+        }
+        if (left_ < right) {
+            quicksort(result, left_, right);
+        }
+    }
+
+    private void swap(int[] result, int i, int j) {
+        int temp = result[i];
+        result[i] = result[j];
+        result[j] = temp;
     }
 }
