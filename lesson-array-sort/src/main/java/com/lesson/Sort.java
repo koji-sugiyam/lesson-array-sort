@@ -33,5 +33,32 @@ public class Sort {
 
     private void doSort(int[] result) {
         // write the awesome code
+    
+
+    	int num;
+    	int count = result.length;
+    	
+    	//後ろとの比較を要素数分繰り返す
+    	for(int i=0; i<count; i++) {
+    	    for(int j=0; j< count; j++) {
+    	    	//最後じゃなければ比較
+            	if ( j+1 < count) {
+            		//次の値より大きければ入れ替え
+            		if(result[j] > result[j+1]) {
+            			//一時保存
+            			num = result[j];
+            			//入れ替え
+	           			result[j] = result[j+1];
+	           			//次のに入れる
+	           			result[j+1] = num;
+            		}
+            	}	
+    	    }
+    	}
+
+    		
+    		
+
+    	
     }
 }
